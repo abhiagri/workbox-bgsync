@@ -1,0 +1,23 @@
+{
+  "name": "workbox-bgsync",
+  "version": "0.1.0",
+  "description": "Package to view the background requests rasied by workbox.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhiagri/workbox-bgsync.git"
+  },
+  "keywords": [
+    "workbox",
+    "background-sync"
+  ],
+  "author": "abhisheklalnediya@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abhiagri/workbox-bgsync/issues"
+  },
+  "homepage": "https://github.com/abhiagri/workbox-bgsync#readme"
+}
