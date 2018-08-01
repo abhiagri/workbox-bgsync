@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './bgqueue.css';
+import './styles.css';
 
 let BG_STORE = null;
 
