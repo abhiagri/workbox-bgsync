@@ -1,5 +1,8 @@
 # Workbok-bgSync
 
+![npm](https://img.shields.io/npm/v/workbox-bgsync.svg)
+![npm](https://img.shields.io/npm/l/workbox-bgsync.svg)
+
 Adds a react component to list the offline requests made by workbox's [backgroundSync](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync).
 
 ## Getting Started
