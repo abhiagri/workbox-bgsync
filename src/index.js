@@ -32,16 +32,22 @@ const formateDate = s => (new Date(s)).toLocaleString();
 
 const getResult = (r) => {
   if (!r.result) return 'Pending';
-  if (r.result.error) return 'Netork Error';
-  const { status, statusText } = r.result.response;
-  return `${status}: ${statusText}`;
+  if (r.result.error) return 'Network Error';
+  if (r.result.response && 'status' in r.result.response) {
+    const { status, statusText } = r.result.response;
+    return `${status}: ${statusText}`;
+  }
+  return 'Error';
 };
 
 const getResultClass = (r) => {
   if (!r.result) return 'pending';
   if (r.result.error) return 'error';
-  const { status } = r.result.response;
-  return status < 400 ? 'success' : 'error';
+  if (r.result.response && 'status' in r.result.response) {
+    const { status } = r.result.response;
+    return status < 400 ? 'success' : 'error';
+  }
+  return 'error';
 };
 
 class BgSyncQueue extends Component {

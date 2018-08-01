@@ -83,11 +83,12 @@ const workboxDBQueueKeys = () => new Promise(((resolve, reject) => {
 }));
 
 
-const syncResults = (results) => {
+const syncResults = (results, callback) => {
   Requests().then((reqs) => {
     results.forEach((res) => {
-      const requestBG = reqs;
-      const ri = requestBG.findIndex(x => x.storableRequest.url && !x.result);
+      const requestBG = reqs.sort((b, a) => a.key - b.key);
+      const ri = requestBG.findIndex(x => x.storableRequest.url === res.request.url && !x.result);
+      console.log('updating', requestBG[ri].key)
       if (ri >= 0) {
         requestBG[ri] = {
           ...requestBG[ri],
@@ -100,23 +101,29 @@ const syncResults = (results) => {
         putBGR(requestBG[ri]);
       }
     });
+    callback();
   });
 };
 
-const sycnDB = results => workboxDBQueueKeys().then((keys) => {
-  if (results && results.length) {
-    syncResults(results);
-  }
-  keys.forEach((key) => {
-    Promise.all([getBGR(key), getWBR(key)]).then((values) => {
-      const [valueBGR, valueWBR] = values;
-      if (valueBGR === undefined) {
-        addBGR({ ...valueWBR, v: 0 }).then(x => console.log('inserted', x));
-      } else {
-        putBGR({ ...valueWBR, key, v: valueBGR.v + 1 }).then(x => console.log('updated', x));
-      }
-    });
+const syncRequests = keys => keys.forEach((key) => {
+  Promise.all([getBGR(key), getWBR(key)]).then((values) => {
+    const [valueBGR, valueWBR] = values;
+    if (valueBGR === undefined) {
+      addBGR({ ...valueWBR, v: 0 }).then(x => console.log('inserted', x));
+    } else {
+      putBGR({ ...valueWBR, key, v: valueBGR.v + 1 }).then(x => console.log('updated', x));
+    }
   });
+});
+
+
+const sycnDB = results => workboxDBQueueKeys().then((keys) => {
+  console.log('Syncing', results);
+  if (results && results.length) {
+    syncResults(results, () => syncRequests(keys));
+  } else {
+    syncRequests(keys);
+  }
 });
 
 const p = new Promise(((resolve, reject) => {
@@ -137,3 +144,15 @@ const p = new Promise(((resolve, reject) => {
     };
   };
 }));
+
+const bgSyncPlugin = qName => new workbox.backgroundSync.Plugin(qName, {
+  maxRetentionTime: 24 * 60, // Retry for max of 24 Hours
+  callbacks: {
+    requestWillEnqueue: (r) => {
+      setTimeout(sycnDB, 1000);
+    },
+    queueDidReplay: (r) => {
+      sycnDB(r);
+    },
+  },
+});
