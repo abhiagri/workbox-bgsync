@@ -13,7 +13,10 @@
   },
   "keywords": [
     "workbox",
-    "background-sync"
+    "background-sync",
+    "react",
+    "Service Worker",
+    "sw"
   ],
   "author": "abhisheklalnediya@gmail.com",
   "license": "MIT",
