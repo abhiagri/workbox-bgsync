@@ -1,6 +1,6 @@
 {
   "name": "workbox-bgsync",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Package to view the background requests rasied by workbox.",
   "main": "dist/index.js",
   "scripts": {
@@ -31,6 +31,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
+    "gulp-minify-css": "^1.2.4",
     "gulp-uglify": "^3.0.1"
   },
   "dependencies": {
