@@ -1,3 +1,11 @@
+<a name="0.2.6"></a>
+## <small>0.2.6 (2018-08-01)</small>
+
+* Build 0.2.6 ([7cebcc9](https://github.com/abhiagri/workbox-bgsync/commit/7cebcc9))
+* styles import corrected ([a881814](https://github.com/abhiagri/workbox-bgsync/commit/a881814))
+
+
+
 <a name="0.2.5"></a>
 ## <small>0.2.5 (2018-08-01)</small>
 
