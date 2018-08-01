@@ -2,7 +2,7 @@
   "name": "workbox-bgsync",
   "version": "0.1.0",
   "description": "Package to view the background requests rasied by workbox.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp"
