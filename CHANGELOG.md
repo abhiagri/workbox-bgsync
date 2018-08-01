@@ -1,6 +1,12 @@
 <a name="0.1.1"></a>
 ## <small>0.1.1 (2018-08-01)</small>
 
+
+
+
+<a name="0.1.1"></a>
+## <small>0.1.1 (2018-08-01)</small>
+
 * 0.1.1 ([d7e9dee](https://github.com/abhiagri/workbox-bgsync/commit/d7e9dee))
 * bug fix ([fb008f2](https://github.com/abhiagri/workbox-bgsync/commit/fb008f2))
 * build config ([c1378b0](https://github.com/abhiagri/workbox-bgsync/commit/c1378b0))
