@@ -31,11 +31,12 @@ Add the script to your service woker after workbox
 
 ```
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.2.0/workbox-sw.js');
-importScripts('https://cdn.rawgit.com/abhiagri/workbox-bgsync/01eca91e/dist/sw.js');
+importScripts('https://rawgit.com/abhiagri/workbox-bgsync/master/dist/sw.js');
 
 ...
 
 ```
+You can also [download](https://rawgit.com/abhiagri/workbox-bgsync/master/dist/sw.js) the file and import it locally
 
 ##### Register Routes
 
