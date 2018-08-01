@@ -1,3 +1,10 @@
+<a name="0.2.0"></a>
+## 0.2.0 (2018-08-01)
+
+* Release 0.0.1 ([5e91c4a](https://github.com/abhiagri/workbox-bgsync/commit/5e91c4a))
+
+
+
 <a name="0.1.1"></a>
 ## <small>0.1.1 (2018-08-01)</small>
 
