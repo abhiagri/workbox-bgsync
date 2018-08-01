@@ -1,3 +1,10 @@
+<a name="0.2.5"></a>
+## <small>0.2.5 (2018-08-01)</small>
+
+* build config ([8f3b79a](https://github.com/abhiagri/workbox-bgsync/commit/8f3b79a))
+
+
+
 <a name="0.2.4"></a>
 ## <small>0.2.4 (2018-08-01)</small>
 
