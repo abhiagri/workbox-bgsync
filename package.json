@@ -1,6 +1,6 @@
 {
   "name": "workbox-bgsync",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Package to view the background requests rasied by workbox.",
   "main": "dist/index.js",
   "scripts": {
