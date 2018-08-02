@@ -1,3 +1,11 @@
+<a name="0.3.0"></a>
+## 0.3.0 (2018-08-02)
+
+* Build 0.3.0 ([2a18d0a](https://github.com/abhiagri/workbox-bgsync/commit/2a18d0a))
+* exposing requests list ([06a1e2c](https://github.com/abhiagri/workbox-bgsync/commit/06a1e2c))
+
+
+
 <a name="0.2.6"></a>
 ## <small>0.2.6 (2018-08-01)</small>
 
