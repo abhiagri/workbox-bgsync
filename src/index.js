@@ -21,7 +21,7 @@ const getBGR = key => new Promise((resolve, reject) => {
   };
 });
 
-const Requests = () => new Promise((resolve) => {
+export const Requests = () => new Promise((resolve) => {
   getBGRKeys().then((keys) => {
     const reqs = keys.map(key => getBGR(key));
     resolve(Promise.all(reqs));
